@@ -36,29 +36,7 @@ function vulnerableDataKeyToHtml() {
     $('#result').html(userData);  // SINK: jQuery html() write
 }
 
-// ============================================================================
-// PATTERN 3: jQuery .attr() read -> outerHTML
-// ============================================================================
-function vulnerableAttrToOuterHTML() {
-    const linkUrl = $('#malicious-link').attr('data-url');
-    document.getElementById('container').outerHTML = linkUrl;  // SINK: outerHTML
-}
 
-// ============================================================================
-// PATTERN 4: jQuery .prop() read -> jQuery .html()
-// ============================================================================
-function vulnerablePropToHtml() {
-    const propValue = $('input').prop('value');
-    $('.output').html(propValue);  // SINK: jQuery html()
-}
-
-// ============================================================================
-// PATTERN 5: jQuery .text() read -> innerHTML
-// ============================================================================
-function vulnerableTextToInnerHTML() {
-    const textContent = $('#source').text();
-    document.getElementById('target').innerHTML = textContent;  // SINK: innerHTML
-}
 
 
 
